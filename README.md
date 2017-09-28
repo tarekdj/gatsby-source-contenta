@@ -24,7 +24,7 @@ plugins: [
   {
     resolve: `gatsby-source-contenta`,
     options: {
-      baseUrl: `http://dev-gatsbyjs-d8.pantheonsite.io`,
+      baseUrl: `http://url.to.your.contenta.site`,
     },
   },
 ]
