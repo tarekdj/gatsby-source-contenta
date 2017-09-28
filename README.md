@@ -1,21 +1,20 @@
-# gatsby-source-drupal
+# gatsby-source-contenta
 
-Source plugin for pulling data into Gatsby from Drupal sites.
+Source plugin for pulling data into Gatsby from Contenta CMS (Drupal distro).
 
-Pulls data from Drupal sites with the [Drupal JSONAPI
-module](https://www.drupal.org/project/jsonapi) installed.
+Pulls data from Drupal sites with the [Contenta CMS
+distro](http://www.contentacms.org/) installed.
 
 An example site for using this plugin is at
-https://using-drupal.gatsbyjs.org/
+TBD
 
 ## Status
 
-This module is at prototype-level. It currently only pulls from Drupal article
-nodes and users. TODOs include making it work with all node types.
+This module is at prototype-level based on gastby-drupal-source. It currently only pulls from Contenta CMS recipes and images. TODOs include making it work with other entites.
 
 ## Install
 
-`npm install --save gatsby-source-drupal`
+`npm install --save gatsby-source-contenta`
 
 ## How to use
 
@@ -23,7 +22,7 @@ nodes and users. TODOs include making it work with all node types.
 // In your gatsby-config.js
 plugins: [
   {
-    resolve: `gatsby-source-drupal`,
+    resolve: `gatsby-source-contenta`,
     options: {
       baseUrl: `http://dev-gatsbyjs-d8.pantheonsite.io`,
     },
@@ -33,23 +32,21 @@ plugins: [
 
 ## How to query
 
-You can query nodes created from Drupal like the following:
+You can query recipes created from Contenta CMS like the following:
 
 ```graphql
 {
-  allDrupalNodeArticle {
+  allDrupalRecipes(sort: { fields: [created], order: DESC }, limit: 10) {
     edges {
       node {
         title
-        nid
-        created(formatString: "DD-MMM-YYYY")
-        author {
-          name
+        id
+        createdAt(formatString: "DD-MMM-YYYY")
+        image {
+          url
         }
       }
     }
   }
 }
 ```
-
-

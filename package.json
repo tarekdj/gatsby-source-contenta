@@ -1,7 +1,7 @@
 {
   "name": "gatsby-source-contenta",
   "description": "Gatsby source plugin for building websites using the Contenta CMS as a data source",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "respository": {
     "type": "git",
     "url": "https://github.com/tarekdj/gatsby-source-contenta"
